@@ -72,9 +72,9 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
-  email: "whwodud9@kaist.ac.kr"
+  email: whwodud9@kaist.ac.kr
   facebook: kevin.jo.10048
-  github: "github.com/heartcored98"
+  github: "heartcored98"
 #  twitter: daattali
 #  reddit: yourname
 #  google-plus: +DeanAttali
