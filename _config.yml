@@ -14,7 +14,7 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Kevin's Gauza 
+title: Kevin's Gauza \n 재영이의 떡상 일지
 
 # Short description of your site
 description: (재영이의 떡상 일지)
@@ -64,7 +64,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Jaeyoung Jo
+  name: Jaeyoung Jo (Kevin)
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -73,7 +73,7 @@ author:
 social-network-links:
   rss: true
   email: "whwodud9@kaist.ac.kr"
-  facebook: daattali
+  facebook: kevin.jo.10048
   github: "github.com/heartcored98"
 #  twitter: daattali
 #  reddit: yourname
@@ -99,7 +99,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-#url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "heartcored98.github.io"
 
 # --- Web Statistics Section --- #
 
