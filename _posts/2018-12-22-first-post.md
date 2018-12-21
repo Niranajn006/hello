@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 첫글!
-image: /img/profile.PNG
+title: 2018년을 마치며 시작하는 블로그
 ---
 
 이것은 나의 첫 글입니다. 저는 흥분된다. 지금 이 글을 쓰는 것에.   
