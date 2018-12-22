@@ -124,7 +124,8 @@ url-pretty: "heartcored98.github.io"
 # --- Comments --- #
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
- disqus: "https-heartcored98-github-io"
+ disqus:
+  shortname: "https-heartcored98-github-io"
 
 # To use Facebook Comments, fill in a Facebook App ID
 # fb_comment_id: ""
