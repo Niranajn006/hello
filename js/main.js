@@ -8,12 +8,12 @@ var main = {
   init : function() {
     // Shorten the navbar after scrolling a little bit down
     $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
+        if ($(".navbar").offset().top > 20) {
             $(".navbar").addClass("top-nav-short");
-            $(".navbar-custom .avatar-container").fadeOut(300);
+            $(".navbar-custom .avatar-container").fadeOut(100);
         } else {
             $(".navbar").removeClass("top-nav-short");
-            $(".navbar-custom .avatar-container").fadeIn(300);
+            $(".navbar-custom .avatar-container").fadeIn(100);
         }
     });
 
