@@ -24,7 +24,7 @@ description: Uprise with Tech
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  POSTS: "posts"
+  POSTS: "index"
   Search by Tags: "tags"
 #    - Beautiful Jekyll: ""
 #    - Learn markdown: ""
