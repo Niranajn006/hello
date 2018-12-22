@@ -30,7 +30,8 @@ title: 교내 커뮤니티 구인 알람 개발기 Part1 - 프로젝트 요구�
 
 둘째로는 일주일 후에 돌아오겠다는 학우들과의 약속을 지키기 위해서..!(바쁜 학기 중엔 디버깅이 힘든다는 점을 다들 이해해주고 있을 것이다 ㅎㅎ)  
 
-## 프로젝트 디자인    
+## 프로젝트 디자인  
+<br>  
 
 #### 서비스 구성은?  
 
@@ -42,15 +43,15 @@ title: 교내 커뮤니티 구인 알람 개발기 Part1 - 프로젝트 요구�
 5. 텔레그램 푸셔는 등록해놓은 구인 채널로 푸쉬 알림을 보내면 끝!  
 
 
-
+<br>
 #### 서버는 어디에?   
  
-저번 버전에서는 한달에 약 3.5달러 밖에 과금이 되지 않는 AWS의 [LightSail](https://aws.amazon.com/ko/s/lp/epid1014-b/?trk=ps_a131L000005Of2gQAC&trkCampaign=ACQ_Amazon_Lightsail&sc_channel=ps&sc_campaign=acquisition_KR&sc_publisher=google&sc_category=lightsail&sc_country=KR&sc_geo=APAC&sc_outcome=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Compute|Lightsail|KR|EN|Text|Lightsail&sc_content=lightsail_e&s_kwcid=AL!4422!3!301818270445!e!!g!!aws%20lightsail&ef_id=CjwKCAiA3vfgBRB9EiwAkfpd3FFD-nSlgvcG4xjHBOQ6rwvJI9Mes3t0HoACsx7yAUlOljUoo3SWehoCpUoQAvD_BwE:G:s) 서버를 한 대 빌려서 사용했었는데, 돈 벌자고 만드는건데 월 지출이 발생하는 것도 그렇고 요즘 대세인 PasS를 시도해보고 싶어서 이번엔 AWS의 [Lambda](https://aws.amazon.com/ko/lambda/) 함수 형태로 만들어서 1분에 한번씩 호출하기로 했다.  
+저번 버전에서는 한달에 약 3.5달러 밖에 과금이 되지 않는 AWS의 [LightSail](https://aws.amazon.com/ko/lightsail/) 서버를 한 대 빌려서 사용했었는데, 돈 벌자고 만드는건데 월 지출이 발생하는 것도 그렇고 요즘 대세인 PasS를 시도해보고 싶어서 이번엔 AWS의 [Lambda](https://aws.amazon.com/ko/lambda/) 함수 형태로 만들어서 1분에 한번씩 호출하기로 했다.  
 
 Lambda 서비스는 한달에 약 1백만회까지 요청이 무료라서(고마워요 AWS!) 호출 주기가 1분이면 월 약 43,000회 정도의 호출이 발생하므로 돈을 한 푼도 안 쓰고 서비스가 가능하다.       
 
     
-
+<br>
 #### 구현은 어떻게?  
 앞서 언급한 다섯 가지의 서비스 구성 요소들을 어떻게 구현할지 하나씩 생각해보았다.  
 
