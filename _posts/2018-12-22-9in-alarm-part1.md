@@ -11,12 +11,12 @@ title: 교내 커뮤니티 구인 알람 개발기 Part1 - 프로젝트 요구�
 
 <p align="center"> 
 <img src="post_src/9in-alarm/service_fail.png" width="300"> 
-<img src="img/profile.PNG" width="300">
 </p>
 <p align="center" style="color:#808080"> 
   야심차게 시작했으나.. 일주일만에 대참사!  
-</p>
+</p>  
 
+![Failed Service](https://github.com/heartcored98/heartcored98.github.io/blob/master/post_src/9in-alarm/service_fail.png)
 
  
 
