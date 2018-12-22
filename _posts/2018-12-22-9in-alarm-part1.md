@@ -14,7 +14,13 @@ title: 교내 커뮤니티 구인 알람 개발기 Part1 - 프로젝트 요구�
 <font size="3">야심차게 시작했으나.. 일주일만에 대참사!</font>  
 </p>
  
+<p align="center" style="color:#808080"> 
+<b>·   ·   ·</b> <br>
+·   ·   ·<br>
+•    •    • <br>  
+<b>•    •    •</b>  
 
+</p>
 
       
  
