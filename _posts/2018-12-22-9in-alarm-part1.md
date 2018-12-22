@@ -11,7 +11,7 @@ title: 교내 커뮤니티 구인 알람 개발기 Part1 - 프로젝트 요구�
 
 <p align="center" style="color:#808080"> 
 <img src="https://heartcored98.github.io/post_src/9in-alarm/service_fail.png" width="300"> <br>   
-<font size="15">야심차게 시작했으나.. 일주일만에 대참사!</font>  
+<font size="4">야심차게 시작했으나.. 일주일만에 대참사!</font>  
 </p>
  
 
