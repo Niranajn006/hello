@@ -9,7 +9,8 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
  - 새 글들의 url로 접속하여 미리보기를 위한 글 내용을 따온다.  
  - 게시글 내용을 열람하기 위해서 자동 로그인을 구현한다.  
 
-<br>
+<br>  
+
 #### 게시글 따오기  
 
 아래 명령어를 통해서 이번 프로젝트에 필요한 라이브러리들을 파이썬 환경에 설치해주자. 
@@ -56,14 +57,36 @@ pip install requests, bs4, pandas, lxml
 아래 코드를 통해 최종적으로 Dataframe을 얻을 수 있었고 N, 작성자, 말머리 등등의 불필요한 열은 삭제해주자. 게시글의 ```id```는 인덱스로 설정해주었으며 이 인덱스는 나중에 새로운 글을 찾는데 사용될 것이다.  
 {% gist bb614ccca6be7475c4556e245b320702 get_df.py %}  
 <p align="center" style="color:#808080"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/df.PNG" width="500"> <br>   
+<img src="https://heartcored98.github.io/post_src/9in-alarm/df.PNG" width="800"> <br>   
 <font size="2.5">아주 이쁘게 파싱됐다</font>  
 </p>  
+
+서비스 상에서 1분에 한번씩 저렇게 게시글 리스트를 크롤링 할건데 크롤링한 결과의 ```id``` 집합에서 이전 결과의 ```id``` 집합을 빼면(차집합)을 구하면 새로 등록된 글들의 알아낼 수 있다. 최신 Dataframe을 df_new, 그 전에 마지막으로 크롤링된 Dataframe을 df_prev라 하면 신규 게시글들의 ```id```는 다음과 같이 계산할 수 있다.  
+
+{% gist bb614ccca6be7475c4556e245b320702 new_ids.py %}  
+
+실제 서비스를 구현할 때는 df_prev를 이전 호출에서 미리 ```S3``` 저장해놓은 뒤 다시 로딩해올 필요가 있으나 이것은 차후에 다루도록 하자.   
+
+#### 게시글 따오기  
+
+#### 게시글 미리보기  
+
+이제 신규 글들의 ```id```를 알아냈다는 가정하에 각 글들의 미리보기 내용을 만들어보자. ```id=568394```인 게시글의 url은 https://ara.kaist.ac.kr/board/Wanted/568394/?page_no=1 이므로 ```id``` 값이 저 중간에 들어감을 알 수 있다. 이제 로그인을 하지 않은 상태에서 위 주소로 바로 접속을 시도하면..  
+
+<p align="center" style="color:#808080"> 
+<img src="https://heartcored98.github.io/post_src/9in-alarm/login_fail.PNG" width="800"> <br>   
+<font size="2.5">보안이 허술하지 않다..!?</font>  
+</p>  
+
+결국 어떻게든 자동으로 로그인을 해야 되는 상황에 처했다. 기존에 내가 쓰던 방식은 ```Selenium```을 사용해서 가상 웹드라이버를 만드는 것이었지만 느리고, 너무 많은 리소스를 잡아먹으며, Lambda 패키지로 만들기도 힘들기에 배제하고 ```requests``` 모듈의 ```Session``` 기능을 이용해보기로 했다. 이를 이용하면 한번 로그인에 성공하면 로그인 성공 정보가 세션에 남기 때문에 자유롭게 게시글들을 열람할 수 있다. ```Session```으로 로그인을 자동화하는 법을 찾다보니 [이 글](https://pybit.es/requests-session.html)과 [요 글](https://stackoverflow.com/questions/38021429/python-requests-login-with-redirection) 정도가 괜찮아보였다. 
+
+ 
 
 
 
 
 <br>
+
 #### 서버는 어디에?   
  
 저번 버전에서는 한달에 약 3.5달러 밖에 과금이 되지 않는 AWS의 [LightSail](https://aws.amazon.com/ko/lightsail/) 서버를 한 대 빌려서 사용했었는데, 돈 벌자고 만드는건데 월 지출이 발생하는 것도 그렇고 요즘 대세인 PasS를 시도해보고 싶어서 이번엔 AWS의 [Lambda](https://aws.amazon.com/ko/lambda/) 함수 형태로 만들어서 1분에 한번씩 호출하기로 했다.  
