@@ -17,8 +17,7 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
  
 <p align="center" style="color:#808080"><b>·&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·</b><br></p>  
 
-
-
+<script src="https://gist.github.com/heartcored98/41a15d39b89d0292116f42481762d213.js"></script>
       
  
       
