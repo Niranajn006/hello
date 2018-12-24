@@ -78,6 +78,6 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
 
 <p align="center" style="color:#808080"> 
 <img src="https://heartcored98.github.io/post_src/9in-alarm/login_all.png" height="500"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/login_code.png" height="500"><br>   
+<img src="https://heartcored98.github.io/post_src/9in-alarm/login_code.PNG" height="500"><br>   
 <font size="2.5">(타닥타닥타자연습은 조금 부끄럽다..)</font>  
 </p>  
