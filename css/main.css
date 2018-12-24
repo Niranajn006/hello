@@ -681,6 +681,7 @@ pre code {
 }
 pre.highlight, .highlight > pre, td.code pre {
   font-size: 12px;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier;
   background-color: #FAFAFA;
   background-image: linear-gradient(#F9F9F9 50%, #FDFDFD 50%);
   background-repeat: repeat;
