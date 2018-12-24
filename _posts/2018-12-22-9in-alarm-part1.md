@@ -6,8 +6,8 @@ title: 교내 커뮤니티 구인 알람 개발기 Part1 - 프로젝트 요구�
 한창 열심히 용돈을 벌기 위해서 교내 커뮤니티의 구인란을 뒤지던 때가 있었다. 문제는 꽤 자주 꿀잡들이 올라오는데 선착순인 경우가 태반.  
 
 <p align="center" style="color:#808080"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/ara_page.PNG" width="500"> <br>   
-<font size="2">교내 커뮤니티 '아라'의 구인란</font>  
+<img src="https://heartcored98.github.io/post_src/9in-alarm/ara_page.PNG" width="1198"> <br>   
+<font size="2.5">교내 커뮤니티 '아라'의 구인란</font>  
 </p>
 
 그래서 누구보다 빠르게 신청하기 위해서 직접 메신저 알람을 만들기로 했다. 그리고 이왕 만들거 다른 학우들과 같이 쓰면 좋으니까 제대로 만들기로 했다. 이런 취지로 약 3개월 전쯤에 실제로 만든 후 카대전에 홍보했더니 나의 구인 채널에는 약 97명의 가난한 학우들이 모여들었다.  
@@ -16,7 +16,7 @@ title: 교내 커뮤니티 구인 알람 개발기 Part1 - 프로젝트 요구�
 
 <p align="center" style="color:#808080"> 
 <img src="https://heartcored98.github.io/post_src/9in-alarm/service_fail.png" width="300"> <br>   
-<font size="2">야심차게 시작했으나.. 일주일만에 대참사!</font>  
+<font size="2.5">야심차게 시작했으나.. 일주일만에 대참사!</font>  
 </p>
  
 <p align="center" style="color:#808080"><b>·&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·</b><br></p>  
