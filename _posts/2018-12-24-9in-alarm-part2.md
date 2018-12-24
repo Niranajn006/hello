@@ -9,13 +9,7 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
  - 새 글들의 url로 접속하여 미리보기를 위한 글 내용을 따온다.  
  - 게시글 내용을 열람하기 위해서 자동 로그인을 구현한다.  
  
-<p align="center" style="color:#808080"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/ara_page.PNG" width="1198"> <br>   
-<font size="2.5">교내 커뮤니티 '아라'의 구인란</font>  
-</p>
-
- 
-<p align="center" style="color:#808080"><b>·&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·</b><br></p>  
+{% gist bb614ccca6be7475c4556e245b320702 %}
 
 <script src="https://gist.github.com/heartcored98/41a15d39b89d0292116f42481762d213.js"></script>
       
