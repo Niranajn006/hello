@@ -6,7 +6,7 @@ title: 교내 커뮤니티 구인 알람 개발기 Part1 - 프로젝트 요구�
 한창 열심히 용돈을 벌기 위해서 교내 커뮤니티의 구인란을 뒤지던 때가 있었다. 문제는 꽤 자주 꿀잡들이 올라오는데 선착순인 경우가 태반.  
 
 <p align="center" style="color:#808080"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/ara_page.png" width="500"> <br>   
+<img src="https://heartcored98.github.io/post_src/9in-alarm/ara_page.PNG" width="500"> <br>   
 <font size="3">교내 커뮤니티 '아라'의 구인란</font>  
 </p>
 
