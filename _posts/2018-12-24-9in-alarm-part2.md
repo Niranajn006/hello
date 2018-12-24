@@ -9,12 +9,60 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
  - 새 글들의 url로 접속하여 미리보기를 위한 글 내용을 따온다.  
  - 게시글 내용을 열람하기 위해서 자동 로그인을 구현한다.  
  
-{% gist bb614ccca6be7475c4556e245b320702 %}
+#### 게시글 따오기  
 
-<script src="https://gist.github.com/heartcored98/41a15d39b89d0292116f42481762d213.js"></script>
-      
- 
-      
+아래 명령어를 통해서 이번 프로젝트에 필요한 라이브러리들을 파이썬 환경에 설치해주자. 
+```
+pip install requests, bs4, pandas, lxml
+```
+
+이제 아래 코드를 실행해보면 정상적으로 아라 게시판의 Html이 텍스트로 출력되는 것을 볼 수 있다. ```request``` 모듈의 ```get``` 메소드를 통해 구인 게시판의 url로 접속한 후 ```text``` 어트리뷰트를 출력하는 코드다.  
+  
+
+{% gist bb614ccca6be7475c4556e245b320702 get_html.py %}  
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+    <head>
+        <title>아라</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="KAIST 학내 커뮤니티, 아라">
+        
+        <link rel="stylesheet" href="/media/CACHE/css/d8b7c9090976.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/media/CACHE/css/5057e10ccd3d.css" type="text/css">
+
+
+        <script type="text/javascript" src="/media/CACHE/js/0b46084f93e7.js" charset="utf-8"></script>
+    </head>
+
+    <body onload="setWidth();" onresize="setWidth();">
+        <ul id="topLinks">
+            <li class="kaist"><a href="http://www.kaist.ac.kr"><strong>KAIST</strong></a></li>
+            <li><a href="http://ara.kaist.ac.kr" title="웹아라">WebARA</a></li>
+            <li><a href="http://lkin.kaist.ac.kr" title="수강지식인">LKIN</a></li>
+            <li><a href="http://otl.kaist.ac.kr" title="온라인 타임테이블 OTL">OTL</a></li>
+            <li><a href="http://ftp.kaist.ac.kr" title="오픈소스 미러링 서비스 FTPKAIST 입니다.">FTPKAIST</a></li>
+            <li><a href="#" id="moreLinks">more...</a></li>
+        </ul>
+        <div id="navigation">
+            <h1><a href="/main/">아라</a></h1>
+            <ul class="menu">
+                <li><a href="/all/" id="menuFavorite" rel="Favorite">모아보기</a></li>
+                <li><a href="#" class="category" id="menuCategory1" rel="Category1">카테고리명</a></li>
+                <li><a href="#" class="category" id="menuCategory2" rel="Category2">카테고리명</a></li>
+                <li><a href="#" class="category" id="menuCategory3" rel="Category3">카테고리명</a></li>
+                <li><a href="#" class="category hidden" id="menuCategory4" rel="Category4">카테고리명</a></li>
+                <li><a href="#" class="category" id="menuCategory5" rel="Category5">카테고리명</a></li>
+                <li><a href="#" class="category" id="menuCategory6" rel="Category6">카테고리명</a></li>
+            </ul>
+```  
+
+<p align="center" style="color:#808080"> 
+<font size="2.5">대략 위에 처럼 나온다 (원본 html은 너무 길어서 생략된 결과다)</font>  
+</p>  
 
 ## 왜 다시 만드는가?  
 
