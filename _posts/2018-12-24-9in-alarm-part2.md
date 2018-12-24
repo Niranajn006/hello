@@ -8,7 +8,8 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
  - 게시글이 작성될 때 발급 받는 ```id```를 바탕으로 새로운 글들의 ```id```만 감지해서 추려낸다.   
  - 새 글들의 url로 접속하여 미리보기를 위한 글 내용을 따온다.  
  - 게시글 내용을 열람하기 위해서 자동 로그인을 구현한다.  
- 
+
+<br>
 #### 게시글 따오기  
 
 아래 명령어를 통해서 이번 프로젝트에 필요한 라이브러리들을 파이썬 환경에 설치해주자. 
@@ -17,8 +18,6 @@ pip install requests, bs4, pandas, lxml
 ```
 
 이제 아래 코드를 실행해보면 정상적으로 아라 게시판의 Html이 텍스트로 출력되는 것을 볼 수 있다. ```request``` 모듈의 ```get``` 메소드를 통해 구인 게시판의 url로 접속한 후 ```text``` 어트리뷰트를 출력하는 코드다.  
-  
-
 {% gist bb614ccca6be7475c4556e245b320702 get_html.py %}  
 
 ```html
@@ -59,7 +58,6 @@ pip install requests, bs4, pandas, lxml
                 <li><a href="#" class="category" id="menuCategory6" rel="Category6">카테고리명</a></li>
             </ul>
 ```  
-
 <p align="center" style="color:#808080"> 
 <font size="2.5">대략 위에 처럼 나온다 (원본 html은 너무 길어서 생략된 결과다)</font>  
 </p>  
