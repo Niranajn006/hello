@@ -42,40 +42,20 @@ pip install requests, bs4, pandas, lxml
             <li class="kaist"><a href="http://www.kaist.ac.kr"><strong>KAIST</strong></a></li>
             <li><a href="http://ara.kaist.ac.kr" title="웹아라">WebARA</a></li>
             <li><a href="http://lkin.kaist.ac.kr" title="수강지식인">LKIN</a></li>
-            <li><a href="http://otl.kaist.ac.kr" title="온라인 타임테이블 OTL">OTL</a></li>
-            <li><a href="http://ftp.kaist.ac.kr" title="오픈소스 미러링 서비스 FTPKAIST 입니다.">FTPKAIST</a></li>
-            <li><a href="#" id="moreLinks">more...</a></li>
-        </ul>
-        <div id="navigation">
-            <h1><a href="/main/">아라</a></h1>
-            <ul class="menu">
-                <li><a href="/all/" id="menuFavorite" rel="Favorite">모아보기</a></li>
-                <li><a href="#" class="category" id="menuCategory1" rel="Category1">카테고리명</a></li>
-                <li><a href="#" class="category" id="menuCategory2" rel="Category2">카테고리명</a></li>
-                <li><a href="#" class="category" id="menuCategory3" rel="Category3">카테고리명</a></li>
-                <li><a href="#" class="category hidden" id="menuCategory4" rel="Category4">카테고리명</a></li>
-                <li><a href="#" class="category" id="menuCategory5" rel="Category5">카테고리명</a></li>
-                <li><a href="#" class="category" id="menuCategory6" rel="Category6">카테고리명</a></li>
-            </ul>
 ```  
 <p align="center" style="color:#808080"> 
-<font size="2.5">대략 위에 처럼 나온다 (원본 html은 너무 길어서 생략된 결과다)</font>  
+<font size="2.5">너무 길어서 생략된 html임</font>  
 </p>  
 
-## 왜 다시 만드는가?  
+구글에 Html에서 Table을 손쉽게 추출하는 법을 몇개 검색한 결과 [여기](https://srome.github.io/Parsing-HTML-Tables-in-Python-with-BeautifulSoup-and-pandas/)의 방식이 제일 깔끔하면서도 강인해보였다. 그냥 쓰니까 몇가지 오류가 나서 어딘가를 수정했따. 최종 Html 파서인 ```HTMLTableParser```는 [여기](https://gist.github.com/heartcored98/bb614ccca6be7475c4556e245b320702#file-parser-py)에 올려두었으며 어디를 어떻게 고친건지는 3개월 전 일이므로..      
+<p align="center" style="color:#808080"> 
+<img src="https://heartcored98.github.io/post_src/9in-alarm/simple.jpg" width="300"> <br>   
+<font size="2.5">...</font>  
+</p>  
 
-**돈**이 없어졌기 때문이다. ~~(자낳괴 공돌이 씁흑흑)~~  방학 때 다시 일을 하기 위해선 이런 자동화된 알람으로 무장할 필요가 있었다. 둘째로는 3개월 전에 일주일 후에 돌아오겠다는 말을 하고 사라진 것에 대한 **책임**을 지기 위해서이다.    
+아래 코드를 통해 최종적으로 Dataframe을 얻을 수 있었고 불필요한 N, 작성자, 말머리 열은 삭제해주자. 그리고 게시글의 ```id```를 인덱스로 설정해주었다. 이 인덱스는 나중에 새로운 글을 찾는데 사용될 것이다.  
+{% gist bb614ccca6be7475c4556e245b320702 get_df.py %}  
 
-## 프로젝트 디자인  
-
-#### 서비스 구성은?  
-
-기획 중인 서비스 플로우차트는 다음과 같다.  
-1. 교내 커뮤니티 중 구인란인 https://ara.kaist.ac.kr/board/Wanted 에 접속 후 게시글 목록을 따온다.  
-2. 마지막으로 업데이트 된 게시글 목록과 비교하여 새로운 글을 추린다.  
-3. 추려진 글들을 하나씩 접속해서 미리보기 텍스트를 추출한다.  
-4. 알람으로 보낼 게시글의 제목과 미리보기 내용을 텔레그램 푸셔에 전송한다.  
-5. 텔레그램 푸셔는 등록해놓은 구인 채널로 푸쉬 알림을 보내면 끝!  
 
 
 <br>
