@@ -79,13 +79,22 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
 <p align="center" style="color:#808080"> 
 <img src="https://heartcored98.github.io/post_src/9in-alarm/login_all.png" height="500"> 
 <img src="https://heartcored98.github.io/post_src/9in-alarm/login_code.PNG" height="500"><br>   
-<font size="2.5">로그인 관련 소스코드</font>  
+<font size="2.5">로그인 UI(위). Html 소스코드 상에서의 로그인 UI 코드(아래)</font>  
 </p>  
 
-사진 속 코드를 보니 로그인 버튼을 누르면 ```/account/login``` 으로 연결되는 것을 보니 로그인 url은 ```https://ara.kaist.ac.kr/account/login/``` 임을 알 수 있다. 그러면 어떤 파라미터들을 API 인풋으로 받는지 알기 위해서 메인 페이지에서(꼭 메인 페이지일 필요는 없음) 개발자 도구의 네트워크 탭을 키고 아이디와 비번을 친 다음 로그인 버튼을 눌러본다. 아래 사진 처럼 네트워크 탭에서 거쳐간 페이지와 리소스 리스트를 보면 맨 처음에 ```/login```이라고 표시된 링크를 거쳐 가는 것을 확인할 수 있다. 실제로 마우스를 올려서 확인해보면 ```https://ara.kaist.ac.kr/account/login/```을 향하고 있음을 확인할 수 있다.   
+위 사진 속 코드를 보니 form-action의 값이 ```/account/login``` 으로 되어있기 때문에 로그인 버튼을 누르면 ```https://ara.kaist.ac.kr/account/login/```로 리디렉션 될 것임을 예상해볼 수 있다. 그럼 어떤 파라미터들을 로그인 API의 인풋으로 받는지 알기 위해서 메인 페이지에서(꼭 메인 페이지일 필요는 없음) 개발자 도구의 네트워크 탭을 키고 아이디와 비번을 친 다음 로그인 버튼을 눌러본다.  
 
 <p align="center" style="color:#808080"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/login_before.PNG" height="500"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/login_success.PNG" height="500"><br>   
-<font size="2.5">로그인 관련 소스코드</font>  
+<img src="https://heartcored98.github.io/post_src/9in-alarm/login_before.PNG"> 
+<img src="https://heartcored98.github.io/post_src/9in-alarm/login_success.PNG"><br>   
+<font size="2.5">네트워크 탭을 띄워둔 로그인 하기 전 메인 페이지 화면(위). 성공적으로 로그인 한 후 나타난 네트워크 탭 화면(아래)</font>   
 </p>  
+
+사진처럼 네트워크 탭에서 거쳐간 페이지와 리소스 리스트를 보면 맨 처음에 ```/login```이라고 표시된 링크를 거쳐 가는 것을 확인할 수 있다. 실제로 마우스를 올려보면 ```https://ara.kaist.ac.kr/account/login/```을 향하고 있음을 확인할 수 있다. 다음으로 빨간색 동그라미 친 항목을 클릭해서 자세한 사항을 열람해보자.  
+
+<p align="center" style="color:#808080"> 
+<img src="https://heartcored98.github.io/post_src/9in-alarm/login_form.PNG"><br>   
+<font size="2.5">로그인 API의 Form Data 항목들</font>   
+</p>  
+
+```username``` 이라는 항목에는 내가 방금 친 아이디가, ```password``` 항목에는 비밀번호가 적혀 있다. 고로 아라 사이트는 로그인 할 때 간단하게 저 두 값만 인풋으로 주면 된다는 것을 알 수 있다. 이제 파이썬 상에서 아이디와 비번을 인풋으로 서버에 넘겨주면서 로그인된 세션을 열어보자.  
