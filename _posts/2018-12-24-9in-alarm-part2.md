@@ -79,5 +79,13 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
 <p align="center" style="color:#808080"> 
 <img src="https://heartcored98.github.io/post_src/9in-alarm/login_all.png" height="500"> 
 <img src="https://heartcored98.github.io/post_src/9in-alarm/login_code.PNG" height="500"><br>   
-<font size="2.5">(타닥타닥타자연습은 조금 부끄럽다..)</font>  
+<font size="2.5">로그인 관련 소스코드</font>  
+</p>  
+
+사진 속 코드를 보니 로그인 버튼을 누르면 ```/account/login``` 으로 연결되는 것을 보니 로그인 url은 ```https://ara.kaist.ac.kr/account/login/``` 임을 알 수 있다. 그러면 어떤 파라미터들을 API 인풋으로 받는지 알기 위해서 메인 페이지에서(꼭 메인 페이지일 필요는 없음) 개발자 도구의 네트워크 탭을 키고 아이디와 비번을 친 다음 로그인 버튼을 눌러본다. 아래 사진 처럼 네트워크 탭에서 거쳐간 페이지와 리소스 리스트를 보면 맨 처음에 ```/login```이라고 표시된 링크를 거쳐 가는 것을 확인할 수 있다. 실제로 마우스를 올려서 확인해보면 ```https://ara.kaist.ac.kr/account/login/```을 향하고 있음을 확인할 수 있다.   
+
+<p align="center" style="color:#808080"> 
+<img src="https://heartcored98.github.io/post_src/9in-alarm/login_before.PNG" height="500"> 
+<img src="https://heartcored98.github.io/post_src/9in-alarm/login_success.PNG" height="500"><br>   
+<font size="2.5">로그인 관련 소스코드</font>  
 </p>  
