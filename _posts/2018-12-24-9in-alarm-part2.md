@@ -96,7 +96,7 @@ title: 교내 커뮤니티 구인 알람 개발기 Part2 - 구인글 크롤링
 
 이번에도 ```requests``` 모듈을 활용해서 로그인 세션을 열어보고 싶어서 구글에 ```python requests login session``` 이런식으로 검색했더니 [이 글](https://stackoverflow.com/questions/12737740/python-requests-and-persistent-sessions)이 유용했다. 아래 코드에서 내 아이디와 비번을 딕셔너리로 만든 후 로그인 링크로 접속하면서 페이로드로 넘겨주었다. 이때 ```headers``` 는 내 요청이 자동화된 스크립트에 의한 요청이 아니라 실제 유저의 브라우저에서 발생한 요청처럼 보이게 해주는 역할을 한다. 로그인된 세션을 만든 후에는 다시 원하는 게시글에 접속한 후 html에서 ```article``` 클래스로 파싱하여 게시글의 본문에 해당하는 텍스트만 추렸다.   
 
- {% gist bb614ccca6be7475c4556e245b320702 get_content.py %}  
+{% gist bb614ccca6be7475c4556e245b320702 get_content.py %}  
  
  
  <p align="center" style="color:#808080"> 
@@ -112,6 +112,15 @@ title: 교내 커뮤니티 구인 알람 개발기 Part2 - 구인글 크롤링
 
   
 예전에도 ```Selenium```을 활용해 본 적은 있지만 ```Lambda``` 서비스 위에서 사용하는건 또 다른 얘기다. 검색을 열심히 해본 결과 유일한 해결책은 ```Selenium v2.53.6```와 ```chromedriver-installer v0.0.6```을 설치하고 ```chromedriver```와 ```headless-chromium```을 조합해서 쓰는 것이다. 일반 로컬 환경에서는 ```chromedriver```만으로도 작동이 가능했는데 ```Lambda```로 올릴려니 ```headless-chromium```이 꼭 필요했다. [이 글](https://robertorocha.info/setting-up-a-selenium-web-scraper-on-aws-lambda-with-python/)이 거의 완벽한 인사이트를 제공해주었다. 요지는 저 두 패키지를 정확한 버전으로 설치한 후 이 [레포지토리](https://github.com/21Buttons/pychromeless)에서 ```chromedriver```와 ```headless-chromium``` 바이너리 파일을 잘 받아주는 것이다.  
+
+{% gist bb614ccca6be7475c4556e245b320702 selenium_test.py %}  
+
+위 코드를 활용하면 가상브라우저를 통해 아라 게시판에 접속할 수 있을 것이다. 이제 로그인 기능을 구현해보자. 필자는 ```Selenium```에서 특정 Element를 선택할 때 ```CSS selector``` 보다는 ```xpath```를 선호한다.(잘못된 Element가 선택되는 일이 거의 발생하지 않기 때문) 크롬 개발자 도구를 활용하여 로그인 폼에 있는 InputField 들의 ```xpath```를 확인해본다.  
+
+- ID InputField : ```'//*[@id="miniLoginID"]'```  
+- PW InputField : ```'//*[@id="miniLoginPassword"]'```  
+- Login Button  : ```'//*[@id="loginBox"]/dd/form/ul/li[3]/a[1]'```     
+
 
   
    
