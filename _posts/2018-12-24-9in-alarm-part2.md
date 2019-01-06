@@ -106,7 +106,7 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
  아니 그런데 이게 웬걸 파싱된 텍스트가 원문 내용과 다른 것이다. 
  
  <p align="center" style="color:#808080"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/wrong1.PNG"> <br> <img src="https://heartcored98.github.io/post_src/9in-alarm/wrong2.PNG">   
+<img src="https://heartcored98.github.io/post_src/9in-alarm/wrong1.PNG"> <br> <img src="https://heartcored98.github.io/post_src/9in-alarm/wrong2.PNG"> <br>   
 <font size="2.5">파싱의 상태가...?!?</font>  
 </p>
  
