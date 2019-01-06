@@ -103,13 +103,13 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
 
  {% gist bb614ccca6be7475c4556e245b320702 get_content.py %}  
  
- 아니 그런데 이게 웬걸 파싱된 텍스트가 원문 내용과 다른 것이다. 
  
  <p align="center" style="color:#808080"> 
 <img src="https://heartcored98.github.io/post_src/9in-alarm/wrong1.PNG"> <br> <img src="https://heartcored98.github.io/post_src/9in-alarm/wrong2.PNG"> <br>   
 <font size="2.5">테스트해본 원문 글(위) 주피터 노트북에서 파싱 테스트한 결과(아래) 파싱의 상태가...?!?</font>  
 </p>
  
+아니 그런데 이게 웬걸 파싱된 텍스트가 원문 내용과 다른 것이다. 유심히 파싱된 결과를 살펴보면 가장 본문 마지막 줄이 나오고 이전 줄의 뒷부분만 파싱이 되는 것을 볼 수 있다.
  
 
 
