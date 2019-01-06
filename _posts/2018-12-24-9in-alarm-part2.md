@@ -98,3 +98,19 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
 </p>  
 
 ```username``` 이라는 항목에는 내가 방금 친 아이디가, ```password``` 항목에는 비밀번호가 적혀 있다. 고로 아라 사이트는 로그인 할 때 간단하게 저 두 값만 인풋으로 주면 된다는 것을 알 수 있다. 이제 파이썬 상에서 아이디와 비번을 인풋으로 서버에 넘겨주면서 로그인된 세션을 열어보자.  
+
+이번에도 ```requests``` 모듈을 활용해서 로그인 세션을 열어보고 싶어서 구글에 ```python requests login session``` 이런식으로 검색했더니 [이 글](https://stackoverflow.com/questions/12737740/python-requests-and-persistent-sessions)이 유용했다. 아래 코드에서 내 아이디와 비번을 딕셔너리로 만든 후 로그인 링크로 접속하면서 페이로드로 넘겨주었다. 이때 ```headers``` 는 내 요청이 자동화된 스크립트에 의한 요청이 아니라 실제 유저의 브라우저에서 발생한 요청처럼 보이게 해주는 역할을 한다. 로그인된 세션을 만든 후에는 다시 원하는 게시글에 접속한 후 html에서 ```article``` 클래스로 파싱하여 게시글의 본문에 해당하는 텍스트만 추렸다.   
+
+ {% gist bb614ccca6be7475c4556e245b320702 get_content.py %}  
+ 
+ 아니 그런데 이게 웬걸 파싱된 텍스트가 원문 내용과 다른 것이다. 
+ 
+ <p align="center" style="color:#808080"> 
+<img src="https://heartcored98.github.io/post_src/9in-alarm/wrong1.PNG"> <br> <img src="https://heartcored98.github.io/post_src/9in-alarm/wrong2.PNG">   
+<font size="2.5">파싱의 상태가...?!?</font>  
+</p>
+ 
+ 
+
+
+
