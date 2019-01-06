@@ -104,11 +104,12 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
 <font size="2.5">테스트해본 원문 글(위) 주피터 노트북에서 파싱 테스트한 결과(아래) 파싱의 상태가...?!?</font>  
 </p>
  
-아니 그런데 이게 웬걸 파싱된 텍스트가 원문 내용과 다른 것이다. 유심히 파싱된 결과를 살펴보면 가장 본문 마지막 줄이 나오고 이전 줄의 뒷부분이 추가되는 것을 볼 수 있다. 이를 해결하기 위해서 약 4일 정도 다양한 시도를 해보았는데 모두 실패하고 말았다. 잠정적인 결론은 파이썬의 ```request```, ```urllib2``` 모듈에 모두 문제가 있다는 것이다. 그래서 결국 피하고 싶었던 ```Selenium``` 모듈을 활용해서 가상 브라우저를 만들기로 했다.  
+아니 그런데 이게 웬걸 파싱된 텍스트가 원문 내용과 다른 것이다. 유심히 파싱된 결과를 살펴보면 가장 본문 마지막 줄이 나오고 이전 줄의 뒷부분이 추가되는 것을 볼 수 있다. 이를 해결하기 위해서 약 4일 정도 다양한 시도를 해보았는데 모두 실패하고 말았다. 잠정적인 결론은 파이썬의 ```request```, ```urllib2``` 모듈에 모두 문제가 있다는 것이다. 그래서 결국 피하고 싶었던 ```Selenium``` 모듈을 활용해 가상 브라우저를 만들기로 했다.  
  
 #### ```Selenium```을 활용한 게시글 미리보기  
 
   
-예전에도 ```Selenium```을 활용해 본 적은 있지만 ```Lambda``` 서비스 위에서 사용하는건 또 다른 얘기다. 검색을 열심히 해본 결과 유일한 해결책은 ```Selenium v2.53.6```와 ```chromedriver-installer v0.0.6```을 설치하고 ```chromedriver```와 ```headless-chromium```을 조합해서 쓰는 것이다. 일반 로컬 환경에서는 ```chromedriver```만으로도 작동이 가능했는데 ```Lambda```로 올릴려니 ```headless-chromium```이 꼭 필요했다.  
+예전에도 ```Selenium```을 활용해 본 적은 있지만 ```Lambda``` 서비스 위에서 사용하는건 또 다른 얘기다. 검색을 열심히 해본 결과 유일한 해결책은 ```Selenium v2.53.6```와 ```chromedriver-installer v0.0.6```을 설치하고 ```chromedriver```와 ```headless-chromium```을 조합해서 쓰는 것이다. 일반 로컬 환경에서는 ```chromedriver```만으로도 작동이 가능했는데 ```Lambda```로 올릴려니 ```headless-chromium```이 꼭 필요했다. [이 글](https://robertorocha.info/setting-up-a-selenium-web-scraper-on-aws-lambda-with-python/)이 거의 완벽한 인사이트를 제공해주었다. 요지는 저 두 패키지를 정확한 버전으로 설치한 후 이 [레포지토리](https://github.com/21Buttons/pychromeless)에서 ```chromedriver```와 ```headless-chromium``` 바이너리 파일을 잘 받아주는 것이다.  
+   
 
 
