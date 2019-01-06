@@ -52,7 +52,7 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
 아래 코드를 통해 최종적으로 Dataframe을 얻을 수 있었고 N, 작성자, 말머리 등등의 불필요한 열은 삭제해주자. 게시글의 ```id```는 인덱스로 설정해주었으며 이 인덱스는 나중에 새로운 글을 찾는데 사용될 것이다.  
 {% gist bb614ccca6be7475c4556e245b320702 get_df.py %}  
 <p align="center" style="color:#808080"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/df.PNG" width="800"> <br>   
+<img src="https://heartcored98.github.io/post_src/9in-alarm/df.PNG" width="500"> <br>   
 <font size="2.5">아주 이쁘게 파싱됐다</font>  
 </p>  
 
@@ -78,7 +78,7 @@ Part1에서 언급한대로 이번 글에서는 파이썬으로 게시판에 접
 
 <p align="center" style="color:#808080"> 
 <img src="https://heartcored98.github.io/post_src/9in-alarm/login_all.png" height="500"> 
-<img src="https://heartcored98.github.io/post_src/9in-alarm/login_code.PNG" height="500"><br>   
+<img src="https:// heartcored98.github.io/post_src/9in-alarm/login_code.PNG" height="500"><br>   
 <font size="2.5">로그인 UI(위). Html 소스코드 상에서의 로그인 UI 코드(아래)</font>  
 </p>  
 
