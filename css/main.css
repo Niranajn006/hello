@@ -19,7 +19,9 @@ body {
   {% endif %}
 }
 p {
-  line-height: 1.5;
+  line-height: 2;
+  font-family: 'Lora', 'Nanum Gothic', 'Times New Roman', serif;
+  font-size: 16px;
   margin: 30px 0;
 }
 h1,h2,h3,h4,h5,h6 {
